@@ -1,31 +1,46 @@
 public class Output {
 
-    private final String SECRET = "9305";
-    private final String OUTPUT2 = "Grade: %s. The secret code is %s.";
-    private final String NONE = "None";
-    int bulls, cows;
+//    private final String SECRET = "";
+//    private final String OUTPUT2 = "Grade: %s. The secret code is %s.";
+//    private final String NONE = "None";
+    private final String RANDOM = "The random secret number is %s.";
+//    int bulls, cows;
+    private String secret = "";
 
-    public Output(String input) {
-        Grader g = new Grader(input, SECRET);
-        this.bulls = g.getBulls();
-        this.cows = g.getCows();
-        printTurn2();
+//    public Output() {
+//
+//    }
+
+    public Output(String secret) {
+        this.secret = secret;
+        print3();
     }
 
-    private void printTurn2 () {
-        String grade = "";
-        if (bulls + cows == 0) {
-            grade = NONE;
-        } else if (bulls == 0) {
-            grade = cows + " cow(s)";
-        } else if (cows == 0) {
-            grade = bulls + " bull(s)";
-        } else {
-            grade = bulls + " bull(s) and " + cows + " cow(s)";
-        }
-        System.out.printf(OUTPUT2, grade, SECRET);
+    private void print3() {
+        System.out.printf(RANDOM, secret);
     }
 }
+
+//    public Output(String input) {
+//        Grader g = new Grader(input, SECRET);
+//        this.bulls = g.getBulls();
+//        this.cows = g.getCows();
+//        printTurn2();
+//    }
+
+//    private void printTurn2 () {
+//        String grade = "";
+//        if (bulls + cows == 0) {
+//            grade = NONE;
+//        } else if (bulls == 0) {
+//            grade = cows + " cow(s)";
+//        } else if (cows == 0) {
+//            grade = bulls + " bull(s)";
+//        } else {
+//            grade = bulls + " bull(s) and " + cows + " cow(s)";
+//        }
+//        System.out.printf(OUTPUT2, grade, SECRET);
+//    }
 
 //    private final String INTRO_SECRET_CODE = "The secret code is prepared: ****.\n";
 //    private final String TURN_ANSWER = "Turn %d. Answer:"; // use with printf
