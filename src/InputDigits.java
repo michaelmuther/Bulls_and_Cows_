@@ -1,26 +1,24 @@
 import java.util.Scanner;
 
-public class Input {
+public class InputDigits {
     private Scanner s = new Scanner(System.in);
-//    private String input;
     private int digits;
     private boolean validInput = false;
     private final int MAX_DIGITS = 10;
+    final private String PLEASE_ENTER_LENGTH = "Please, enter the secret code's length:";
+    final private String LETS_START = "Okay, let's start a game!";
     final private String ERROR = "Error: can't generate a secret number with a length of %d because there aren't enough unique digits.";
 
-    public Input() {
+    public InputDigits() {
+        System.out.println(PLEASE_ENTER_LENGTH);
         digits = s.nextInt();
         if (digits > MAX_DIGITS) {
             System.out.printf(ERROR, digits);
         } else {
             validInput = true;
+            System.out.println(LETS_START);
         }
-//        input = s.nextLine();
     }
-
-//    public String getInput() {
-//        return input;
-//    }
 
     public int getDigits() {
         return digits;
